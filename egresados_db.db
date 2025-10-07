@@ -1,0 +1,31 @@
+CREATE DATABASE IF NOT EXISTS egresados_db DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+
+USE egresados_db;
+
+CREATE TABLE IF NOT EXISTS Estudiantes (
+  id_Estudiante INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  DNI (VARCHAR, UNIQUE)NOT NULL,
+  Nombres VARCHAR(100) NOT NULL,
+  Apellidos VARCHAR(100) NOT NULL,
+  Gmail VARCHAR(100) NOT NULL,
+  Telefono INT (20) NOT NULL,
+  Fecha_registro TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS Especialidad (
+    id_especialidad INT (11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    Especialidad VARCHAR(100) NOT NULL,
+    Cantidad de modulos Int(3) NOT NULL,
+)
+
+CREATE TABLE IF NOT EXISTS Modulos (
+    id_Modulos INT (10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    Nombre_de_Modulo VARCHAR (300) NOT NULL,
+    Cantidad_de_Horas INT (4) NOT NULL,
+    Creditos INT (4) NOT NULL,
+)
+
+CREATE TABLE IF NOT EXISTS inscripción de Modulos (
+    Id_Inscripcion_Modulos INT (10)
+)
